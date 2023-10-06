@@ -48,22 +48,27 @@ function scrabbleScorer(word) {
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
-
+let userInput;
 function initialPrompt() {
    userInput = input.question("Let's play some scrabble! \n\nEnter a word: ");
+   console.log(userInput);
    let validChars = "abcdefghijklmnopqrstuvwxyz ";
    let lowerCaseInput = userInput.toLowerCase();//makes all letters lower case for efficient comparison
    let singleChar;
    for(let i=0; i<userInput.length; i++) {//for each letter in userInput, the for loop iterates checking to see if that letter is included in the validInput string
       singleChar = lowerCaseInput[i];
+      console.log(i);
+      console.log(singleChar);
       if (!validChars.includes(singleChar)) {
          console.log(`Sorry, invalid input. Please enter a word with characters a-z.`)
-         initialPrompt();
+         i=0;
+         return userInput = initialPrompt();
       } 
-      return userInput;
-
    }//if the character is not found in the validChars string, the user will be prompted again. If not, the function returns the initial user input.
-   
+   console.log(userInput)
+   return userInput;
+
+
 };
 
 let simpleScorer = function (word) {
