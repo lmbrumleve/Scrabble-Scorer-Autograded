@@ -138,7 +138,8 @@ Enter 0, 1, or 2: `);
    } else if (userSelectedScoring === String(2)) {
       return scrabble;
    } else {
-      return input.question("Invalid input. Please enter 0, 1, or 2: ");
+      console.log("Invalid input. ");
+      return scorerPrompt();
    }
 } 
 
