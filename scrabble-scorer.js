@@ -60,10 +60,10 @@ function initialPrompt() {
          console.log(`Sorry, invalid input. Please enter a word with characters a-z.`)
          initialPrompt();
       } 
+      return userInput;
+
    }//if the character is not found in the validChars string, the user will be prompted again. If not, the function returns the initial user input.
    
-   return userInput;
-
 };
 
 let simpleScorer = function (word) {
